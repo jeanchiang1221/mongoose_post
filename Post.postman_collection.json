@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "56e5cad9-f248-468c-9569-2f2155c35518",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24708234"
+	},
+	"item": [
+		{
+			"name": "取得所有貼文",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "新增貼文",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n          \"name\": \"庫洛米\",\r\n          \"tags\": \"心情\",\r\n          \"type\": \"fan\",\r\n          \"image\": \"\",\r\n          \"content\": \"庫洛米心情很好\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mongoose-post.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"mongoose-post",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n          \"name\": \"庫洛米\",\r\n          \"tags\": \"心情\",\r\n          \"type\": \"fan\",\r\n          \"image\": \"\",\r\n          \"content\": \"米米是我的好朋友\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mongoose-post.onrender.com/661f5c7c954fb50175336d76",
+					"protocol": "https",
+					"host": [
+						"mongoose-post",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"661f5c7c954fb50175336d76"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://mongoose-post.onrender.com/posts",
+					"protocol": "https",
+					"host": [
+						"mongoose-post",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://mongoose-post.onrender.com/posts/661f5c62954fb50175336d6f",
+					"protocol": "https",
+					"host": [
+						"mongoose-post",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts",
+						"661f5c62954fb50175336d6f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "按讚貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "https://mongoose-post.onrender.com/posts/likes/661f5c7c954fb50175336d76",
+					"protocol": "https",
+					"host": [
+						"mongoose-post",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"posts",
+						"likes",
+						"661f5c7c954fb50175336d76"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
