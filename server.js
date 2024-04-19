@@ -97,7 +97,7 @@ const requestListener = async (req, res) => {
             content: data.content,
           };
 
-          await Post.findByIdAndUpdate(id, updatedData);
+          await Post.findByIdAndUpdate(id, updatedData,{ runValidators: true });
           const updatedPost = await Post.findById(id);
           successHandle(res, updatedPost);
         } else {
