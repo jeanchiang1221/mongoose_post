@@ -61,27 +61,6 @@ const requestListener = async (req, res) => {
       const error = "無此ID";
       errorHandle(res, error);
     }
-    req.on("end", async () => {
-      try {
-        const data = JSON.parse(body);
-        const id = req.url.split("/").pop();
-        const post = await Post.findById(id);
-        if (post != null) {
-          const updatedData = {
-            comment: data.comment,
-          };
-
-          await Post.findByIdAndUpdate(id, updatedData);
-          const updatedPost = await Post.findById(id);
-          successHandle(res, updatedPost);
-        } else {
-          const error = "無此ID";
-          errorHandle(res, error);
-        }
-      } catch (error) {
-        errorHandle(res, error);
-      }
-    });
   } else if (req.url.startsWith("/posts") && req.method == "PATCH") {
     req.on("end", async () => {
       try {
